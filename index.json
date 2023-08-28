@@ -1,0 +1,424 @@
+{
+    "CT-Right": [
+        {
+            "CTimg": "./image/tp-msg.png",
+            "CTtext": "contact@webtel.in",
+            "CTlink": "https://mailto:contact@webtel.in"
+        },
+        {
+            "CTimg": "./image/tp-ph.png",
+            "CTtext": "(011) 45054000"
+        }
+    ],
+    "CT-Left": [
+        {
+            "CLimg": "./image/fb-icon.png",
+            "CLlink": "https://www.facebook.com/login"
+        },
+        {
+            "CLimg": "./image/tw-icon.png",
+            "CLlink": "https://twitter.com/login?lang=en"
+        },
+        {
+            "CLimg": "./image/link-icon.png",
+            "CLlink": "https://www.linkedin.com/uas/login"
+        }
+    ],
+    "Navbar": [
+        {
+            "title": "Home"
+        },
+        {
+            "title": "Team"
+        },
+        {
+            "title": "Services"
+        },
+        {
+            "title": "Contact Us"
+        },
+        {
+            "title": "Calculators"
+        },
+        {
+            "title": "Bulletins"
+        },
+        {
+            "title": "Utilities"
+        },
+        {
+            "title": "Links"
+        },
+        {
+            "title": "Acts"
+        },
+        {
+            "title": "Rules"
+        },
+        {
+            "title": "Forms",
+            "url": "form.html"
+        },
+        {
+            "title": "News"
+        },
+        {
+            "title": "Query"
+        },
+        {
+            "title": "Admin"
+        }
+    ],
+    "Carousel": [
+        {
+            "CarouselImg": "./image/b1.jpg"
+        },
+        {
+            "CarouselImg": "./image/b2.jpg"
+        },
+        {
+            "CarouselImg": "./image/b3.jpg"
+        }
+    ],
+    "Hexshape": [
+        {
+            "HexImg": "./image/values.png",
+            "HexHeading": "Governance",
+            "HexPara": "Corporate Governance refers to a combination of laws, regulations, procedures,",
+            "HexBtn": "- READ MORE"
+        },
+        {
+            "HexImg": "./image/team.png",
+            "HexHeading": "Our Team",
+            "HexPara": "Our dedicated team comprises of competent people with extensive knowledge....",
+            "HexBtn": "- READ MORE"
+        },
+        {
+            "HexImg": "./image/contact.png",
+            "HexHeading": "Contact Us",
+            "HexPara": "Office- 110-114, 1st Floor Rattan Jyoti Building 18, Rajendra Place, New Delhi-110008",
+            "HexBtn": "- READ MORE"
+        }
+    ],
+    "WelcomeMsg": [
+        {
+            "WM": "<span>Welcome to <strong>XYZ & Associates</strong></span>",
+            "WMPara1": "<p> <strong>XYZ & Associates</strong> is a leading chartered accountancy firm rendering comprehensive professional services which include Audit, Management Consultancy, Tax Consultancy, Accounting Services, Manpower Management, Secretarial Services etc.</p>",
+            "WMPara2": "<p><strong>XYZ & Associates</strong> is a professionally managed firm. The team consists of distinguished Chartered Accountants, Corporate Financial Advisors and Tax Consultants. The firm represents a combination of specialized skills, which are geared to offers sound financial advice and personalized proactive services. Those associated with the firm have regular interaction with industry and other professionals which enables the firm to keep pace with contemporary developments and to meet the needs of its clients.</p>"
+        }
+    ],
+    "OurServices": [
+        {
+            "OSImg": "./image/ser-img1.jpg",
+            "OSHeading": "Corporate Governance",
+            "OSPara": "Corporate Governance refers to a combination of laws, regulations, procedures, implicit rules and voluntary practices..."
+        },
+        {
+            "OSImg": "./image/ser-img2.jpg",
+            "OSHeading": "Accounting Services",
+            "OSPara": "Accounting System Design & Implementation, Financial Accounting, Budgeting, Financial Reporting, MIS Reports..."
+        },
+        {
+            "OSImg": "./image/ser-img3.jpg",
+            "OSHeading": "Audit",
+            "OSPara": "Indepth study of existing systems, procedures and controls for proper understanding. Suggestions for improvement and strengthening..."
+        },
+        {
+            "OSImg": "./image/ser-img4.jpg",
+            "OSHeading": "Corporate Finance",
+            "OSPara": "Preparations of Project Reports, Preparation of CMA data for bank loans, Private placement of shares, Inter-Corporate..."
+        }
+    ],
+    "UsefulLinks": [
+        {
+            "ULHeading": "Income Tax Dept.",
+            "ULLink": "http://incometaxindia.gov.in/Pages/default.aspx"
+        },
+        {
+            "ULHeading": "Central Board of Excise & Customs",
+            "ULLink": "http://cbec.gov.in/"
+        },
+        {
+            "ULHeading": "E-Tax Information Network",
+            "ULLink": "https://www.tin-nsdl.com/"
+        },
+        {
+            "ULHeading": "Ministry of Corporate Affairs",
+            "ULLink": "http://mca.gov.in/"
+        },
+        {
+            "ULHeading": "Employees Provident Fund",
+            "ULLink": "http://epfindia.com/site_en/"
+        }
+    ],
+    "Links": [
+        {
+            "LHeading": "Home",
+            "LLink": ""
+        },
+        {
+            "LHeading": "Team",
+            "LLink": ""
+        },
+        {
+            "LHeading": "Contact Us",
+            "LLink": ""
+        },
+        {
+            "LHeading": "News",
+            "LLink": ""
+        },
+        {
+            "LHeading": "Query",
+            "LLink": ""
+        }
+    ],
+    "ContactUs": [
+        {
+            "CUAdr1": "Office- 110-114, 1st Floor Rattan Jyoti",
+            "CUAdr2": "Building 18, Rajendra Place, New Delhi-110008",
+            "CUImg": "./image/map-icon.png"
+        },
+        {
+            "CUAdr1": "(011) 45054000 (30 Lines)",
+            "CUAdr2": "We feel happy to talk",
+            "CUImg": "./image/ph-icon.png"
+        },
+        {
+            "CUAdr1": "contact@webtel.in",
+            "CUAdr2": "Write Your Message",
+            "CUImg": "./image/mail-icon.png"
+        }
+    ],
+    "CRItems": [
+        {
+            "CRImg": "./image/ft-link.png"
+        },
+        {
+            "CRImg": "./image/ft-fb.png"
+        },
+        {
+            "CRImg": "./image/ft-tw.png"
+        },
+        {
+            "CRImg": "./image/ft-google.png"
+        },
+        {
+            "CRImg": "./image/ft-yt.png"
+        }
+    ],
+    "RegisterForm": [
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Name",
+            "important": "*",
+            "type": "text",
+            "for": "Name"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Company Name",
+            "important": "*",
+            "type": "text",
+            "for": "Company Name"
+        },
+        {
+            "field": "select",
+            "MI": "one",
+            "label": "Client Type",
+            "important": "*",
+            "type": "text",
+            "for": "Client Type",
+            "options": [
+                {
+                    "value": "Select",
+                    "label": "Select"
+                },
+                {
+                    "value": "CWA",
+                    "label": "CWA"
+                },
+                {
+                    "value": "Consulting Firm",
+                    "label": "Consulting Firm"
+                },
+                {
+                    "value": "Study Circle",
+                    "label": "Study Circle"
+                },
+                {
+                    "value": "C.A",
+                    "label": "C.A"
+                },
+                {
+                    "value": "C.S",
+                    "label": "C.S"
+                },
+                {
+                    "value": "Government",
+                    "label": "Government"
+                },
+                {
+                    "value": "Company",
+                    "label": "Company"
+                },
+                {
+                    "value": "School",
+                    "label": "School"
+                },
+                {
+                    "value": "Hospital",
+                    "label": "Hospital"
+                },
+                {
+                    "value": "Advocate",
+                    "label": "Advocate"
+                },
+                {
+                    "value": "Others",
+                    "label": "Others"
+                }
+            ]
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Address",
+            "important": "*",
+            "type": "text",
+            "for": "Address"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "City",
+            "important": "*",
+            "type": "text",
+            "for": "City"
+        },
+        {
+            "field": "select",
+            "MI": "one",
+            "label": "State",
+            "important": "*",
+            "type": "text",
+            "for": "State",
+            "options": [
+                {
+                    "value": "Select",
+                    "label": "Select"
+                },
+                {
+                    "value": "Delhi",
+                    "label": "Delhi"
+                },
+                {
+                    "value": "Haryana",
+                    "label": "Haryana"
+                },
+                {
+                    "value": "Uttar Pradesh",
+                    "label": "Uttar Pradesh"
+                },
+                {
+                    "value": "Maharashtra",
+                    "label": "Maharashtra"
+                },
+                {
+                    "value": "Goa",
+                    "label": "Goa"
+                }
+            ]
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Pincode",
+            "important": "*",
+            "type": "number",
+            "for": "Pincode"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Phone-I",
+            "important": "*",
+            "type": "number",
+            "for": "Phone-I"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Mobile Number",
+            "important": "*",
+            "type": "number",
+            "for": "Mobile Number"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Phone-II",
+            "important": "*",
+            "type": "number",
+            "for": "Phone-II"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "E-mail",
+            "important": "*",
+            "type": "text",
+            "for": "E-mail"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "E-mail-2",
+            "important": "*",
+            "type": "text",
+            "for": "E-mail-2"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "GSTIN",
+            "important": "*",
+            "type": "text",
+            "for": "GSTIN"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Product bought from",
+            "important": "*",
+            "type": "text",
+            "for": "Product bought from"
+        },
+        {
+            "field": "input",
+            "MI": "three",
+            "label": "Old CD-Key",
+            "important": "*",
+            "type": "text",
+            "for": "Old CD-Key"
+        },
+        {
+            "field": "input",
+            "MI": "three",
+            "label": "CD-Keys",
+            "important": "*",
+            "type": "text",
+            "for": "CD-Keys"
+        },
+        {
+            "field": "input",
+            "MI": "one",
+            "label": "Registration Id",
+            "important": "*",
+            "type": "text",
+            "for": "Registration Id"
+        }
+    ]
+}
