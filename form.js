@@ -1,14 +1,16 @@
+let RegisterForm;
 
 window.addEventListener("DOMContentLoaded", function () {
 
     fetch('index.json')
         .then(response => response.json())
         .then(data => {
-            const RegisterForm = data['RegisterForm'];
+            RegisterForm = data['RegisterForm'];
 
             let displayRegisterForm = RegisterForm.map(function (item) {
 
 
+                let formControlHTML = '';
 
                 if (item.field === "select") {
 
@@ -29,163 +31,140 @@ window.addEventListener("DOMContentLoaded", function () {
                     <div class="form-control">
                             <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
                             <div class="inputMI">
-                            <input class="inputM" type="${item.type}" id="" name="${item.for}" />
-                            <input class="inputM" type="${item.type}" id="" name="${item.for}" />
-                            <input class="inputM" type="${item.type}" id="" name="${item.for}" />
+                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
+                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
+                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
                             </div>
                     </div>
                     `
                 }
 
                 else if (item.field === "input") {
-                    return `
+                    formControlHTML = `
                     <div class="form-control">
                             <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
-                            <input class="input" type="${item.type}" id="" name="${item.for}" />
+                            <input class="input" type="${item.type}" id="${item.id}" name="${item.for}" inputmode="none" />
                     </div>
                     `;
                 }
 
-
-
-
+                return formControlHTML;
             });
 
             let RF = displayRegisterForm.join("");
             document.getElementById("rf").innerHTML = RF;
-        })
+
+            RegisterForm.forEach(function (item) {
+
+                if (item.field === "input" && item.id === "name" || item.id === "cn" || item.id === "city") {
+                    const inputElement = document.getElementById(`${item.id}`);
+
+                    inputElement.addEventListener("input", function () {
+                        validateNameString(inputElement);
+                    });
+                }
+
+                if (item.field === "input" && item.id === "pincode" || item.id === "phone1" || item.id === "mobilenum" || item.id === "phone2") {
+                    const inputElement = document.getElementById(`${item.id}`);
+
+                    inputElement.addEventListener("input", function () {
+                        validateNumber(inputElement);
+                    });
+                }
+
+                if (item.field === "input" && item.id === "gstin" || item.id === "RI") {
+                    const inputElement = document.getElementById(`${item.id}`);
+
+                    inputElement.addEventListener("input", function () {
+                        validateToUppercase(inputElement);
+                    });
+                }
+            });
+
+            const submitButton = document.getElementById("submitButton");
+            submitButton.addEventListener("click", function () {
+                if (validateSubmit()) {
+
+                    document.getElementById("rf").submit();
+                }
+            });
+
+        });
+
+    const clearButton = document.getElementById("clearButton");
+    clearButton.addEventListener("click", clearFormFields);
 });
 
+function clearFormFields() {
+    const inputFields = document.querySelectorAll('input');
+    inputFields.forEach(input => {
+        input.value = '';
+    });
+
+
+    const selectFields = document.querySelectorAll('select');
+    selectFields.forEach(select => {
+        select.selectedIndex = 0;
+    });
+
+
+}
 
 
 
-// // form
+function validateSubmit() {
+    if (!RegisterForm) {
+        console.error("RegisterForm is not defined. Please check your code.");
+        return false;
+    }
 
-// const form = document.getElementById("registration_form");
+    const importantFields = RegisterForm.filter(item => item.important === "*");
 
-// const passwordInput = document.getElementById("password");
-// const password = passwordInput.value;
+    for (const item of importantFields) {
+        const inputElement = document.getElementById(`${item.id}`);
+        const inputValue = inputElement.value.trim();
 
-// const confirmPass = document.getElementById("confirm_password");
-// const confirmValue = confirmPass.value;
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     // first-name
-
-//     const firstName = document.getElementById("first_name");
-
-//     firstName.addEventListener("input", function () {
-//         let fnValue = firstName.value;
-//         if (fnValue.length > 0) {
-//             fnValue = fnValue.charAt(0).toUpperCase() + fnValue.slice(1);
-//             firstName.value = fnValue;
-//         }
-//     });
-
-//     // last-name
-
-//     const lastName = document.getElementById("last_name");
-
-//     lastName.addEventListener("input", function () {
-//         let lnValue = lastName.value;
-//         if (lnValue.length > 0) {
-//             lnValue = lnValue.charAt(0).toUpperCase() + lnValue.slice(1);
-//             lastName.value = lnValue;
-//         }
-//     });
+        if (inputValue.length === 0) {
+            alert("Please fill in all important fields.");
+            return false;
+        }
+    }
 
 
-//     // gst-number
-
-//     const gstNum = document.getElementById("gst_no");
-
-//     gstNum.addEventListener("input", function () {
-//         let gstValue = gstNum.value;
-//         let modifiedValue = '';
-
-//         for (let i = 0; i < gstValue.length; i++) {
-//             let currentChar = gstValue.charAt(i);
-
-//             if (currentChar >= 'a' && currentChar <= 'z') {
-//                 modifiedValue += currentChar.toUpperCase();
-//             } else {
-//                 modifiedValue += currentChar;
-//             }
-//         }
-
-//         gstNum.value = modifiedValue;
-//     });
-
-// });
+    return true;
+}
 
 
-// form.addEventListener("submit", (event) => {
+function validateNameString(inputElement) {
 
-//     event.preventDefault();
+    let inputValue = inputElement.value;
+    inputValue = inputValue.replace(/\b\w/g, match => match.toUpperCase());
+    const regex = /^[A-Za-z\s]+$/;
 
-//     //email-id
+    if (!regex.test(inputValue)) {
+        // alert("Please enter alphabets and spaces only in the Name field.");
+        inputElement.value = inputValue.replace(/[^A-Za-z\s]/g, "");
+    } else {
+        inputElement.value = inputValue;
+    }
+}
 
-//     const emailID = document.getElementById("email_id");
-//     const errorMessage = document.getElementById("error_message");
+function validateNumber(inputElement) {
+    const inputValue = inputElement.value;
+    const numericValue = inputValue.replace(/[^0-9]/g, '')
 
-//     emailID.addEventListener("submit", function (event) {
-//         let emailValue = emailID.value;
-//         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (numericValue !== inputValue) {
+        inputElement.value = numericValue;
+    }
+}
 
-//         if (!emailPattern.test(emailValue)) {
-//             event.preventDefault();
-//             errorMessage.textContent = "Please enter a valid email address.";
-//         } else {
-//             errorMessage.textContent = "";
-//         }
-//     });
+function validateToUppercase(inputElement) {
+    let inputValue = inputElement.value;
 
-
-//     for (let controlGroups of formControlGroup) {
-//         if (controlGroups.classList.contains("error")) {
-//             alert("Please provide all required details");
-//             return;
-//         }
-//     }
-
-//     passwordInput.addEventListener("submit", function (event) {
-
-
-//         const uppercasePattern = /[A-Z]/;
-//         const hasUppercase = uppercasePattern.test(password);
+    inputValue = inputValue.replace(/[a-z]/g, function (match) {
+        return match.toUpperCase();
+    });
+    inputElement.value = inputValue;
+}
 
 
-//         const lowercasePattern = /[a-z]/;
-//         const hasLowercase = lowercasePattern.test(password);
-
-
-//         const digitPattern = /\d/;
-//         const hasDigit = digitPattern.test(password);
-
-
-//         const specialCharacterPattern = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/;
-//         const hasSpecialCharacter = specialCharacterPattern.test(password);
-
-
-//         if (hasUppercase && hasLowercase && hasDigit && hasSpecialCharacter) {
-//             errorMessage.textContent = ""; // Clear error message
-//         } else {
-//             errorMessage.textContent = "Password must contain special characters, uppercase, lowercase, and numbers.";
-//         }
-//     });
-
-
-//     if (password !== confirmValue) {
-//         alert("Password and Confirm Password Must be the Same!");
-//         return;
-//     }
-
-//     form.submit();
-//     alert("Form submitted successfully!");
-
-
-
-// });
