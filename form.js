@@ -1,3 +1,4 @@
+
 let RegisterForm;
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -5,54 +6,74 @@ window.addEventListener("DOMContentLoaded", function () {
     fetch('index.json')
         .then(response => response.json())
         .then(data => {
+
             RegisterForm = data['RegisterForm'];
 
             let displayRegisterForm = RegisterForm.map(function (item) {
 
-
                 let formControlHTML = '';
+                
 
                 if (item.field === "select") {
-
                     const options = item.options.map(option =>
                         `<option value="${option.value}">${option.label}</option>`
                     ).join("");
 
                     return `
-                    <div class="form-control">
+                            <div id="mainForm" class="form-control">
                             <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
-                            <select class="input" name="${item.for}" id="${item.for}">${options}</select>
+                            <select class="input" name="${item.for}" id="${item.id}" ${item.display}>${options}</select>
                     </div>
                     `
                 }
 
                 else if (item.field === "input" && item.MI === "three") {
+                    const inputs = item.inputs.map(input =>
+                        `<input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" ${item.display}/>`
+                    ).join("");
+
                     return `
-                    <div class="form-control">
-                            <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
-                            <div class="inputMI">
-                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
-                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
-                            <input class="inputM" type="${item.type}" id="${item.id}" name="${item.for}" />
-                            </div>
+                    <div id="mainForm" class="form-control" >
+                    <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
+                    <div class="inputMI">
+                    ${inputs}
+                    </div>
                     </div>
                     `
                 }
 
                 else if (item.field === "input") {
+
                     formControlHTML = `
-                    <div class="form-control">
-                            <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
-                            <input class="input" type="${item.type}" id="${item.id}" name="${item.for}" inputmode="none" />
+                    <div id="mainForm" class="form-control">
+                    <label class="label" for="${item.for}">${item.label}<span class="important">${item.important}</span></label>
+                    <input class="input" type="${item.type}" id="${item.id}" name="${item.for}" inputmode="none" ${item.display}/>
                     </div>
                     `;
                 }
-
                 return formControlHTML;
+
+                
             });
 
             let RF = displayRegisterForm.join("");
             document.getElementById("rf").innerHTML = RF;
+
+            let i = 0;
+            const b = RegisterForm.length;
+
+            function enableAndFocusNextField() {
+                
+                if (i < b) {
+                    RegisterForm[i].display = "";
+                    const element = document.getElementById(RegisterForm[i].id);
+                    if (element) {
+                        element.disabled = false;
+                        element.focus();
+                    }
+                    i++;
+                }
+            }
 
             RegisterForm.forEach(function (item) {
 
@@ -79,6 +100,17 @@ window.addEventListener("DOMContentLoaded", function () {
                         validateToUppercase(inputElement);
                     });
                 }
+
+                if (item.field === "input" || item.field === "select") {
+                    const inputElement = document.getElementById(`${item.id}`);
+
+                    inputElement.addEventListener("keydown", function (event) {
+                        if (event.key === "Enter") {
+                            enableAndFocusNextField();
+                        }
+                    });
+                }
+
             });
 
             const submitButton = document.getElementById("submitButton");
@@ -95,6 +127,7 @@ window.addEventListener("DOMContentLoaded", function () {
     clearButton.addEventListener("click", clearFormFields);
 });
 
+
 function clearFormFields() {
     const inputFields = document.querySelectorAll('input');
     inputFields.forEach(input => {
@@ -110,16 +143,12 @@ function clearFormFields() {
 
 }
 
-
-
 function validateSubmit() {
     if (!RegisterForm) {
         console.error("RegisterForm is not defined. Please check your code.");
         return false;
     }
-
     const importantFields = RegisterForm.filter(item => item.important === "*");
-
     for (const item of importantFields) {
         const inputElement = document.getElementById(`${item.id}`);
         const inputValue = inputElement.value.trim();
@@ -129,11 +158,8 @@ function validateSubmit() {
             return false;
         }
     }
-
-
     return true;
 }
-
 
 function validateNameString(inputElement) {
 
