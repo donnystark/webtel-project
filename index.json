@@ -214,7 +214,10 @@
             "label": "Name",
             "important": "*",
             "type": "text",
-            "for": "Name"
+            "for": "Name",
+            "id": "name",
+            "display": "",
+            "rank": 0
         },
         {
             "field": "input",
@@ -222,7 +225,10 @@
             "label": "Company Name",
             "important": "*",
             "type": "text",
-            "for": "Company Name"
+            "for": "Company Name",
+            "id": "cn",
+            "display": "disabled",
+            "rank": 1
         },
         {
             "field": "select",
@@ -231,6 +237,7 @@
             "important": "*",
             "type": "text",
             "for": "Client Type",
+            "id": "clienttype",
             "options": [
                 {
                     "value": "Select",
@@ -280,7 +287,9 @@
                     "value": "Others",
                     "label": "Others"
                 }
-            ]
+            ],
+            "display": "disabled",
+            "rank": 2
         },
         {
             "field": "input",
@@ -288,7 +297,10 @@
             "label": "Address",
             "important": "*",
             "type": "text",
-            "for": "Address"
+            "for": "Address",
+            "id": "address",
+            "display": "disabled",
+            "rank": 3
         },
         {
             "field": "input",
@@ -296,7 +308,10 @@
             "label": "City",
             "important": "*",
             "type": "text",
-            "for": "City"
+            "for": "City",
+            "id": "city",
+            "display": "disabled",
+            "rank": 4
         },
         {
             "field": "select",
@@ -305,6 +320,7 @@
             "important": "*",
             "type": "text",
             "for": "State",
+            "id": "state",
             "options": [
                 {
                     "value": "Select",
@@ -330,39 +346,53 @@
                     "value": "Goa",
                     "label": "Goa"
                 }
-            ]
+            ],
+            "display": "disabled",
+            "rank": 5
         },
         {
             "field": "input",
             "MI": "one",
             "label": "Pincode",
             "important": "*",
-            "type": "number",
-            "for": "Pincode"
+            "type": "text",
+            "for": "Pincode",
+            "id": "pincode",
+            "display": "disabled",
+            "rank": 6
         },
         {
             "field": "input",
             "MI": "one",
             "label": "Phone-I",
             "important": "*",
-            "type": "number",
-            "for": "Phone-I"
+            "type": "text",
+            "for": "Phone-I",
+            "id": "phone1",
+            "display": "disabled",
+            "rank": 7
         },
         {
             "field": "input",
             "MI": "one",
             "label": "Mobile Number",
             "important": "*",
-            "type": "number",
-            "for": "Mobile Number"
+            "type": "text",
+            "for": "Mobile Number",
+            "id": "mobilenum",
+            "display": "disabled",
+            "rank": 8
         },
         {
             "field": "input",
             "MI": "one",
             "label": "Phone-II",
-            "important": "*",
-            "type": "number",
-            "for": "Phone-II"
+            "important": "",
+            "type": "text",
+            "for": "Phone-II",
+            "id": "phone2",
+            "display": "disabled",
+            "rank": 9
         },
         {
             "field": "input",
@@ -370,15 +400,21 @@
             "label": "E-mail",
             "important": "*",
             "type": "text",
-            "for": "E-mail"
+            "for": "E-mail",
+            "id": "email",
+            "display": "disabled",
+            "rank": 10
         },
         {
             "field": "input",
             "MI": "one",
             "label": "E-mail-2",
-            "important": "*",
+            "important": "",
             "type": "text",
-            "for": "E-mail-2"
+            "for": "E-mail-2",
+            "id": "email2",
+            "display": "disabled",
+            "rank": 11
         },
         {
             "field": "input",
@@ -386,7 +422,10 @@
             "label": "GSTIN",
             "important": "*",
             "type": "text",
-            "for": "GSTIN"
+            "for": "GSTIN",
+            "id": "gstin",
+            "display": "disabled",
+            "rank": 12
         },
         {
             "field": "input",
@@ -394,23 +433,48 @@
             "label": "Product bought from",
             "important": "*",
             "type": "text",
-            "for": "Product bought from"
+            "for": "Product bought from",
+            "id": "PBF",
+            "display": "disabled",
+            "rank": 13
         },
         {
             "field": "input",
             "MI": "three",
             "label": "Old CD-Key",
-            "important": "*",
+            "important": "",
             "type": "text",
-            "for": "Old CD-Key"
+            "for": "Old CD-Key",
+            "id": "ock",
+            "display": "disabled",
+            "rank": 14,
+            "inputs": [
+                {
+                    "id": "ock1"
+                },
+                {
+                    "id": "ock2"
+                },
+                {
+                    "id": "ock3"
+                }
+            ]
         },
         {
             "field": "input",
             "MI": "three",
-            "label": "CD-Keys",
+            "label": "CD-Key",
             "important": "*",
             "type": "text",
-            "for": "CD-Keys"
+            "for": "CD-Keys",
+            "id": "ck",
+            "display": "disabled",
+            "rank": 15,
+            "inputs": [
+                {},
+                {},
+                {}
+            ]
         },
         {
             "field": "input",
@@ -418,7 +482,10 @@
             "label": "Registration Id",
             "important": "*",
             "type": "text",
-            "for": "Registration Id"
+            "for": "Registration Id",
+            "id": "RI",
+            "display": "disabled",
+            "rank": 16
         }
     ]
 }
